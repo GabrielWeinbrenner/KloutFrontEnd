@@ -8,16 +8,16 @@ function BusinessHireAlt(props) {
     <View style={styles.container}>
       <Slider value={74} style={styles.slider}></Slider>
       <Text style={styles.influencersNearYou}>Influencers near you</Text>
-      <View style={styles.scrollAreaRow}>
-        <View style={styles.scrollArea}>
-          <ScrollView
-            horizontal={true}
-            contentContainerStyle={styles.scrollArea_contentContainerStyle}
-          >
+      <View style={styles.scrollArea}>
+        <ScrollView
+          horizontal={true}
+          contentContainerStyle={styles.scrollArea_contentContainerStyle}
+        >
+          <View style={styles.rect9Row}>
             <View style={styles.rect9}></View>
-          </ScrollView>
-        </View>
-        <View style={styles.rect10}></View>
+            <View style={styles.rect10}></View>
+          </View>
+        </ScrollView>
       </View>
       <Text style={styles.loremIpsum}>How many clout do you want?</Text>
       <View style={styles.loremIpsum2Row}>
@@ -61,34 +61,35 @@ const styles = StyleSheet.create({
       {
         rotate: "-0.32deg"
       }
-    ]
+    ],
+    marginTop: 356,
+    marginLeft: 37
   },
   scrollArea_contentContainerStyle: {
-    width: 150,
-    height: 150
+    width: 300,
+    height: 150,
+    flexDirection: "row"
   },
   rect9: {
     width: 138,
     height: 122,
     backgroundColor: "rgba(48,58,128,1)",
-    borderRadius: 22,
-    marginTop: 14,
-    marginLeft: 12
+    borderRadius: 22
   },
   rect10: {
     width: 138,
     height: 122,
     backgroundColor: "rgba(48,58,128,1)",
     borderRadius: 22,
-    marginLeft: 7,
-    marginTop: 14
+    marginLeft: 7
   },
-  scrollAreaRow: {
-    height: 150,
+  rect9Row: {
+    height: 122,
     flexDirection: "row",
-    marginTop: 356,
-    marginLeft: 37,
-    marginRight: 43
+    flex: 1,
+    marginRight: 5,
+    marginLeft: 12,
+    marginTop: 14
   },
   loremIpsum: {
     fontFamily: "roboto-regular",

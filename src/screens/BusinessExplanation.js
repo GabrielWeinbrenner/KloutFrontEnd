@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
+import MaterialButtonViolet from "../components/MaterialButtonViolet";
 
 function BusinessExplanation(props) {
   return (
@@ -12,6 +13,10 @@ function BusinessExplanation(props) {
         Promote! We charge no upfront cost -{"\n"}however a slice of the
         payments will be {"\n"}distributed to your influencers
       </Text>
+      <MaterialButtonViolet
+        caption="Next"
+        style={styles.materialButtonViolet}
+      ></MaterialButtonViolet>
     </View>
   );
 }
@@ -37,6 +42,13 @@ const styles = StyleSheet.create({
     color: "#121212",
     marginTop: 63,
     marginLeft: 76
+  },
+  materialButtonViolet: {
+    height: 48,
+    width: 250,
+    borderRadius: 71,
+    marginTop: 338,
+    alignSelf: "center"
   }
 });
 

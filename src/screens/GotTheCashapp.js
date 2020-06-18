@@ -12,15 +12,15 @@ function GotTheCashapp(props) {
       ></TextInput>
       <Text style={styles.loremIpsum2}>Add profile picture here:</Text>
       <View style={styles.ellipseRow}>
-        <Svg viewBox="0 0 89.75 88.21" style={styles.ellipse}>
+        <Svg viewBox="0 0 108.23 118.81" style={styles.ellipse}>
           <Ellipse
             stroke="rgba(230, 230, 230,1)"
             strokeWidth={0}
             fill="rgba(230, 230, 230,1)"
-            cx={45}
-            cy={44}
-            rx={45}
-            ry={44}
+            cx={54}
+            cy={59}
+            rx={54}
+            ry={59}
           ></Ellipse>
         </Svg>
         <View style={styles.rect}>

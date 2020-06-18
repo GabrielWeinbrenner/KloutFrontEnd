@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   View,
-  Text,
   Slider,
+  Text,
   ScrollView,
   TouchableOpacity
 } from "react-native";
@@ -12,37 +12,34 @@ import Svg, { Ellipse } from "react-native-svg";
 import Icon from "react-native-vector-icons/Entypo";
 import Menu from "../components/Menu";
 
-function BusinessHire(props) {
+function BusinessHire1(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.mapViewStackStack}>
-        <View style={styles.mapViewStack}>
-          <MapView
-            provider={MapView.PROVIDER_GOOGLE}
-            initialRegion={{
-              latitude: 37.78825,
-              longitude: -122.4324,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421
-            }}
-            customMapStyle={[]}
-            style={styles.mapView}
-          ></MapView>
-          <Svg viewBox="0 0 100.58 99.02" style={styles.ellipse}>
-            <Ellipse
-              stroke="rgba(219,19,19,0.92)"
-              strokeWidth={62}
-              cx={50}
-              cy={50}
-              rx={19}
-              ry={19}
-            ></Ellipse>
-          </Svg>
-          <View style={styles.rect11}></View>
-        </View>
-        <Text style={styles.influencersNearYou}>Influencers near you</Text>
+      <View style={styles.mapViewStack}>
+        <MapView
+          provider={MapView.PROVIDER_GOOGLE}
+          initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421
+          }}
+          customMapStyle={[]}
+          style={styles.mapView}
+        ></MapView>
+        <Svg viewBox="0 0 100.58 99.02" style={styles.ellipse}>
+          <Ellipse
+            stroke="rgba(219,19,19,0.92)"
+            strokeWidth={62}
+            cx={50}
+            cy={50}
+            rx={19}
+            ry={19}
+          ></Ellipse>
+        </Svg>
       </View>
       <Slider value={74} style={styles.slider}></Slider>
+      <Text style={styles.influencersNearYou}>Influencers near you</Text>
       <View style={styles.scrollArea}>
         <ScrollView
           horizontal={true}
@@ -87,51 +84,35 @@ const styles = StyleSheet.create({
   },
   mapView: {
     position: "absolute",
-    top: 37,
+    top: 0,
     height: 259,
     width: 321,
     left: 0
   },
   ellipse: {
-    top: 91,
+    top: 54,
     left: 110,
     width: 101,
     height: 99,
     position: "absolute",
     opacity: 0.23
   },
-  rect11: {
-    top: 0,
-    left: 167,
-    width: 125,
-    height: 38,
-    position: "absolute",
-    backgroundColor: "#E6E6E6"
-  },
   mapViewStack: {
-    top: 0,
-    left: 0,
     width: 321,
-    height: 296,
-    position: "absolute"
-  },
-  influencersNearYou: {
-    top: 14,
-    left: 10,
-    position: "absolute",
-    fontFamily: "roboto-regular",
-    color: "#121212"
-  },
-  mapViewStackStack: {
-    width: 321,
-    height: 296,
-    marginTop: 54,
+    height: 259,
+    marginTop: 91,
     marginLeft: 27
   },
   slider: {
     height: 32,
     width: 300,
     marginTop: 282,
+    marginLeft: 37
+  },
+  influencersNearYou: {
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    marginTop: -596,
     marginLeft: 37
   },
   scrollArea: {
@@ -143,7 +124,7 @@ const styles = StyleSheet.create({
         rotate: "-0.32deg"
       }
     ],
-    marginTop: -224,
+    marginTop: 356,
     marginLeft: 37
   },
   scrollArea_contentContainerStyle: {
@@ -316,4 +297,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default BusinessHire;
+export default BusinessHire1;

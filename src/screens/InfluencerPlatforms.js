@@ -75,20 +75,20 @@ const styles = StyleSheet.create({
     width: 230,
     height: 45,
     backgroundColor: "#E6E6E6",
-    marginTop: 31,
+    marginTop: 30,
     marginLeft: 39
   },
   instagram: {
     fontFamily: "roboto-regular",
     color: "#121212",
-    marginTop: 13,
+    marginTop: 14,
     marginLeft: 39
   },
   rect3: {
     width: 230,
     height: 45,
     backgroundColor: "#E6E6E6",
-    marginTop: 31,
+    marginTop: 32,
     marginLeft: 39
   },
   facebook: {

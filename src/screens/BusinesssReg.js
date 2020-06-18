@@ -31,9 +31,6 @@ function BusinesssReg(props) {
         placeholder="City of Company"
         style={styles.textInput6}
       ></TextInput>
-      <View style={styles.rect}>
-        <Text style={styles.loremIpsum3}>Continue</Text>
-      </View>
       <TextInput
         placeholder="Company Name"
         style={styles.textInput7}
@@ -124,25 +121,12 @@ const styles = StyleSheet.create({
     height: 51,
     marginLeft: 41
   },
-  rect: {
-    width: 286,
-    height: 50,
-    backgroundColor: "#E6E6E6",
-    marginTop: 130,
-    marginLeft: 41
-  },
-  loremIpsum3: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    marginTop: 14,
-    marginLeft: 106
-  },
   textInput7: {
     fontFamily: "roboto-regular",
     color: "#121212",
     width: 267,
     height: 41,
-    marginTop: -463,
+    marginTop: -283,
     marginLeft: 41
   }
 });

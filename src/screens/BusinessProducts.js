@@ -15,6 +15,9 @@ function BusinessProducts(props) {
         How many products/services do you want to promote?
       </Text>
       <TextInput placeholder="Eg. 50" style={styles.textInput2}></TextInput>
+      <View style={styles.rect}>
+        <Text style={styles.loremIpsum3}>Continue</Text>
+      </View>
     </View>
   );
 }
@@ -50,6 +53,20 @@ const styles = StyleSheet.create({
     height: 18,
     marginTop: 25,
     marginLeft: 61
+  },
+  rect: {
+    width: 271,
+    height: 62,
+    backgroundColor: "#E6E6E6",
+    borderRadius: 32,
+    marginTop: 397,
+    marginLeft: 47
+  },
+  loremIpsum3: {
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    marginTop: 25,
+    marginLeft: 104
   }
 });
 

@@ -42,20 +42,20 @@ const styles = StyleSheet.create({
     width: 274,
     height: 57,
     backgroundColor: "#E6E6E6",
-    marginTop: 720,
+    marginTop: 713,
     marginLeft: 56
   },
   findNewPromotions: {
     fontFamily: "roboto-regular",
     color: "#121212",
-    marginTop: 22,
+    marginTop: 29,
     marginLeft: 68
   },
   rect2: {
     width: 298,
     height: 57,
     backgroundColor: "#E6E6E6",
-    marginTop: -696,
+    marginTop: -689,
     marginLeft: 32
   },
   activePromotions: {

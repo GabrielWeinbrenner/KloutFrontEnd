@@ -1,19 +1,16 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image } from "react-native";
 
 function Landing(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.signInRow}>
-        <TouchableOpacity style={styles.signIn}>
+      <View style={styles.rect4Row}>
+        <View style={styles.rect4}>
           <Text style={styles.signIn2}>Sign In</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("InfluencerReg")}
-          style={styles.register}
-        >
+        </View>
+        <View style={styles.rect3}>
           <Text style={styles.register2}>Register</Text>
-        </TouchableOpacity>
+        </View>
       </View>
       <Image
         source={require("../assets/images/klout.jpeg")}
@@ -27,18 +24,15 @@ function Landing(props) {
       <View style={styles.signIn3StackRow}>
         <View style={styles.signIn3Stack}>
           <Text style={styles.signIn3}>Sign In</Text>
-          <TouchableOpacity style={styles.signIn4}>
+          <View style={styles.rect2}>
             <Text style={styles.signIn5}>Sign In</Text>
-          </TouchableOpacity>
+          </View>
         </View>
         <View style={styles.register3Stack}>
           <Text style={styles.register3}>Register</Text>
-          <TouchableOpacity
-            onPress={() => props.navigation.navigate("BusinesssReg")}
-            style={styles.register4}
-          >
+          <View style={styles.rect}>
             <Text style={styles.register5}>Register</Text>
-          </TouchableOpacity>
+          </View>
         </View>
       </View>
       <Text style={styles.loremIpsum}>
@@ -52,7 +46,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
-  signIn: {
+  rect4: {
     width: 145,
     height: 52,
     backgroundColor: "#E6E6E6"
@@ -63,7 +57,7 @@ const styles = StyleSheet.create({
     marginTop: 18,
     marginLeft: 51
   },
-  register: {
+  rect3: {
     width: 145,
     height: 52,
     backgroundColor: "#E6E6E6",
@@ -75,7 +69,7 @@ const styles = StyleSheet.create({
     marginTop: 18,
     marginLeft: 47
   },
-  signInRow: {
+  rect4Row: {
     height: 52,
     flexDirection: "row",
     marginTop: 618,
@@ -107,7 +101,7 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular",
     color: "#121212"
   },
-  signIn4: {
+  rect2: {
     top: 0,
     left: 0,
     width: 145,
@@ -132,7 +126,7 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular",
     color: "#121212"
   },
-  register4: {
+  rect: {
     top: 0,
     left: 0,
     width: 145,

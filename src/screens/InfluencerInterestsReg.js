@@ -133,19 +133,20 @@ const styles = StyleSheet.create({
     width: 282,
     height: 45,
     backgroundColor: "#E6E6E6",
-    marginTop: 167,
+    marginTop: 162,
     marginLeft: 46
   },
   next: {
     fontFamily: "roboto-regular",
     color: "#121212",
     fontSize: 21,
+    marginTop: 5,
     marginLeft: 120
   },
   loremIpsum2: {
     fontFamily: "roboto-regular",
     color: "#121212",
-    marginTop: -184,
+    marginTop: -179,
     marginLeft: 64
   }
 });
