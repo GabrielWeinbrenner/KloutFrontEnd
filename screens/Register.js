@@ -4,13 +4,10 @@ import {
   ImageBackground,
   Dimensions,
   StatusBar,
-  KeyboardAvoidingView
 } from "react-native";
-import { Block, Checkbox, Text, theme } from "galio-framework";
+import { Block, Text } from "galio-framework";
 
 import Button from '../components/Button';
-import Icon from '../components/Icon';
-import Input from '../components/Input';
 
 import Images from "../constants/Images";
 import Theme from '../constants/Theme';
@@ -82,40 +79,9 @@ const styles = StyleSheet.create({
     elevation: 1,
     overflow: "hidden"
   },
-  socialConnect: {
-    backgroundColor: Theme.COLORS.WHITE,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: "#8898AA"
-  },
-  socialButtons: {
-    width: 120,
-    height: 40,
-    backgroundColor: "#fff",
-    shadowColor: Theme.COLORS.BLACK,
-    shadowOffset: {
-      width: 0,
-      height: 4
-    },
-    shadowRadius: 8,
-    shadowOpacity: 0.1,
-    elevation: 1
-  },
-  socialTextButtons: {
-    color: Theme.COLORS.PRIMARY,
-    fontWeight: "800",
-    fontSize: 14
-  },
   heading: {
     marginTop: 100,
     margin: 30,
-  },
-  inputIcons: {
-    marginRight: 12
-  },
-  passwordCheck: {
-    paddingLeft: 15,
-    paddingTop: 13,
-    paddingBottom: 30
   },
   createButton: {
     width: width * 0.5,
