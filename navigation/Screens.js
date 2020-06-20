@@ -1,22 +1,45 @@
 import React from "react";
-import HomeScreen from "../screens/HomeScreen";
+import Landing from "../screens/Landing";
 import { createStackNavigator } from "@react-navigation/stack";
 // import CustomDrawerContent from "./Menu";
 
 const Stack = createStackNavigator();
 // const Drawer = createDrawerNavigator();
 
-export default function Onboard(props) {
+function HomeStack(props) {
+    return (
+        <Stack.Navigator mode="card" headerMode="screen">
+            <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{
+                    header: ({ navigation, scene }) => (
+                        <Header
+                            title="Home"
+                            search
+                            options
+                            navigation={navigation}
+                            scene={scene}
+                        />
+                    ),
+                    cardStyle: { backgroundColor: "#F8F9FE" }
+                }}
+            />
+        </Stack.Navigator>
+    );
+
+
+export default function LandingPage(props) {
     return (
         <Stack.Navigator mode="card" headerMode="none">
             <Stack.Screen
-                name="HomeScreen"
-                component={HomeScreen}
+                name="Landing"
+                component={Landing}
                 option={{
                     headerTransparent: true
                 }}
             />
-            {/* <Stack.Screen name="App" component={AppStack} /> */}
+            <Stack.Screen name="App" component={AppStack} />
         </Stack.Navigator>
     );
 }

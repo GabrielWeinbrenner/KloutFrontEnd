@@ -13,7 +13,7 @@ const { height, width } = Dimensions.get("screen");
 import argonTheme from "../constants/Theme";
 import Images from "../constants/Images.js";
 
-class HomeScreen extends React.Component {
+class Landing extends React.Component {
   render() {
     const { navigation } = this.props;
 
@@ -96,4 +96,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HomeScreen;
+export default Landing;
