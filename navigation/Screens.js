@@ -5,6 +5,9 @@ import Landing from "../screens/Landing";
 import Register from "../screens/Register";
 import Influencerreg from "../screens/Influencerreg";
 import Businessreg from "../screens/Businessreg";
+import SocialMediaPicker from "../screens/SocialMediaPicker";
+import Interests from "../screens/Interests";
+
 
 const Stack = createStackNavigator();
 
@@ -57,7 +60,7 @@ function RegisterStack(props){
             />
             <Stack.Screen
                 name="InfluencerRegistration"
-                component={Influencerreg}
+                component={InfluencerStack}
                 options={{
                     header: ({ navigation, scene }) => (
                         <Header
@@ -70,6 +73,82 @@ function RegisterStack(props){
                         />
                     ),
                     headerTransparent: true
+                }}
+            />
+        </Stack.Navigator>
+    )
+}
+function InfluencerStack(){
+    return (
+        <Stack.Navigator mode="card" headerMode="none">
+            <Stack.Screen
+                name="InfluencerStack"
+                component={Influencerreg}
+                options={{
+                    header: ({ navigation, scene }) => (
+                        <Header title="Influencer Stack" navigation={navigation} scene={scene} />
+                    ),
+                    cardStyle: { backgroundColor: "#F8F9FE" }
+                }}
+            />
+            <Stack.Screen
+                name="SocialMedia"
+                component={SocialMediaStack}
+                options={{
+                    header: ({ navigation, scene }) => (
+                        <Header
+                            title="Social Media"
+                            back
+                            white
+                            transparent
+                            navigation={navigation}
+                            scene={scene}
+                        />
+                    ),
+                    headerTransparent: true
+                }}
+            />
+        </Stack.Navigator>
+    )
+}
+function SocialMediaStack(){
+    return (
+        <Stack.Navigator mode="card" headerMode="none">
+            <Stack.Screen
+                name="SocialMedia"
+                component={SocialMediaPicker}
+                options={{
+                    header: ({ navigation, scene }) => (
+                        <Header title="Social Media" navigation={navigation} scene={scene} />
+                    ),
+                    cardStyle: { backgroundColor: "#F8F9FE" }
+                }}
+            />
+            <Stack.Screen
+                name="Interests"
+                component={InterestsStack}
+                options={{
+                    header: ({ navigation, scene }) => (
+                        <Header title="Social Media" navigation={navigation} scene={scene} />
+                    ),
+                    cardStyle: { backgroundColor: "#F8F9FE" }
+                }}
+            />
+        </Stack.Navigator>
+    )
+}
+
+function InterestsStack() {
+    return (
+        <Stack.Navigator mode="card" headerMode="none">
+            <Stack.Screen
+                name="Interests"
+                component={Interests}
+                options={{
+                    header: ({ navigation, scene }) => (
+                        <Header title="Interests" navigation={navigation} scene={scene} />
+                    ),
+                    cardStyle: { backgroundColor: "#F8F9FE" }
                 }}
             />
         </Stack.Navigator>

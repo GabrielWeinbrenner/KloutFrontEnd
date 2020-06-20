@@ -18,7 +18,10 @@ import Theme from '../constants/Theme';
 const { width, height } = Dimensions.get("screen");
 
 class Influencerreg extends React.Component {
+    
     render() {
+        const { navigation } = this.props;
+
         return (
             <Block flex middle>
                 <StatusBar hidden />
@@ -156,7 +159,9 @@ class Influencerreg extends React.Component {
                       </Button>
                     </Block>
                     <Block middle>
-                      <Button color="primary" style={styles.createButton}>
+                      <Button color="primary" style={styles.createButton} 
+                        onPress={ () => navigation.navigate("SocialMedia")}
+                      >
                         <Text bold size={14} color={Theme.COLORS.WHITE}>
                           CONTINUE
                         </Text>
