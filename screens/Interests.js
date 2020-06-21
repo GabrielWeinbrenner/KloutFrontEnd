@@ -11,9 +11,11 @@ const { width, height } = Dimensions.get("screen");
 
 class Interests extends React.Component {
     render() {
+        const { navigation } = this.props;
+
         return(
             <View>
-                <InterestsPicker text="What are your interests?"/>
+                <InterestsPicker navigation={navigation} destination="Customization" text="What are your interests?"/>
             </View>
         )
         

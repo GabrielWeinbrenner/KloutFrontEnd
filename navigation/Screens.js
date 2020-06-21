@@ -7,8 +7,8 @@ import Influencerreg from "../screens/Influencerreg";
 import Businessreg from "../screens/Businessreg";
 import SocialMediaPicker from "../screens/SocialMediaPicker";
 import Interests from "../screens/Interests";
-
-
+import Customization from '../screens/Customization';
+import Profile from '../screens/Profile';
 const Stack = createStackNavigator();
 
 import Header from '../components/Header';
@@ -147,6 +147,59 @@ function InterestsStack() {
                 options={{
                     header: ({ navigation, scene }) => (
                         <Header title="Interests" navigation={navigation} scene={scene} />
+                    ),
+                    cardStyle: { backgroundColor: "#F8F9FE" }
+                }}
+            />
+            <Stack.Screen
+                name="Customization"
+                component={CustomizationStack}
+                options={{
+                    header: ({ navigation, scene }) => (
+                        <Header title="Customization" navigation={navigation} scene={scene} />
+                    ),
+                    cardStyle: { backgroundColor: "#F8F9FE" }
+                }}
+            />
+        </Stack.Navigator>
+    )
+}
+function CustomizationStack() {
+    return (
+        <Stack.Navigator mode="card" headerMode="none">
+            <Stack.Screen
+                name="Customization"
+                component={Customization}
+                options={{
+                    header: ({ navigation, scene }) => (
+                        <Header title="Customization" navigation={navigation} scene={scene} />
+                    ),
+                    cardStyle: { backgroundColor: "#F8F9FE" }
+                }}
+            />
+            <Stack.Screen
+                name="Profile"
+                component={ProfileStack}
+                options={{
+                    header: ({ navigation, scene }) => (
+                        <Header title="Profile" navigation={navigation} scene={scene} />
+                    ),
+                    cardStyle: { backgroundColor: "#F8F9FE" }
+                }}
+            />
+        </Stack.Navigator>
+    )
+}
+
+function ProfileStack() {
+    return (
+        <Stack.Navigator mode="card" headerMode="none">
+            <Stack.Screen
+                name="Profile"
+                component={Profile}
+                options={{
+                    header: ({ navigation, scene }) => (
+                        <Header title="Profile" navigation={navigation} scene={scene} />
                     ),
                     cardStyle: { backgroundColor: "#F8F9FE" }
                 }}

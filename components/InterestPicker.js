@@ -7,6 +7,8 @@ class InterestPicker extends React.Component {
         super(props);
     }
     render() {
+        const navigation = this.props.navigation
+
         const interests = [
             { name: "Clothing"},
             { name: "Hardware"},
@@ -40,8 +42,12 @@ class InterestPicker extends React.Component {
                     />
                 </View>
                 <Block middle>
-                    <Button color="primary" style={styles.createButton}>
-                        <Text bold size={14} color={Theme.COLORS.WHITE}>
+                    <Button color="primary" style={styles.createButton}
+                        onPress={()=>{
+                            navigation.navigate(this.props.destination)
+                        }}
+                    >
+                        <Text bold size={14} color={Theme.COLORS.WHITE} >
                             CONTINUE
                         </Text>
                     </Button>
