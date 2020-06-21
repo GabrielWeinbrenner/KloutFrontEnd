@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
     StyleSheet,
     ImageBackground,
@@ -15,11 +16,30 @@ import Input from '../components/Input';
 import Images from "../constants/Images";
 import Theme from '../constants/Theme';
 
+
 const { width, height } = Dimensions.get("screen");
 
 class Influencerreg extends React.Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        firstName: "",
+        lastName: "",
+        city: "",
+        email: "",
+        phone: "",
+        password: "",
+        socialMedia: [],
+        interests: [],
+        cashApp: "",
+        description: "",
+      
+      }
+      
+    }
     
     render() {
+
         const { navigation } = this.props;
 
         return (
@@ -36,15 +56,12 @@ class Influencerreg extends React.Component {
                   </Text>
                 </Block>
                 <Block flex center>
-                  <KeyboardAvoidingView
-                    style={{ flex: 1 }}
-                    behavior="padding"
-                    enabled
-                  >
+
                     <Block width={width * 0.8} style={{ marginBottom: 15, flexDirection: "row"}}>
                         <Input
                             borderless
                             placeholder="First Name"
+                            value={this.state.firstName}
                             iconContent={
                             <Icon
                                 size={16}
@@ -55,14 +72,17 @@ class Influencerreg extends React.Component {
                             />
                             }
                             style={{ width: width * 0.33 }}
-
-                        />
+                            onChangeText={(firstName) => {
+                              this.setState({firstName: firstName})
+                            }}
+                        />  
                         <Text>
                             {"     "}
                         </Text>
                         <Input
                             borderless
                             placeholder="Last Name"
+                            value={this.state.lastName}
                             iconContent={
                                 <Icon
                                     size={16}
@@ -73,12 +93,16 @@ class Influencerreg extends React.Component {
                                 />
                             }
                             style={{width:width*0.43}}
+                            onChangeText={(lastName) => {
+                              this.setState({ lastName: lastName })
+                            }}
                         />
                     </Block>
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         borderless
                         placeholder="City"
+                        value={this.state.city}
                         iconContent={
                           <Icon
                             size={16}
@@ -88,12 +112,16 @@ class Influencerreg extends React.Component {
                             style={styles.inputIcons}
                           />
                         }
+                        onChangeText={(city) => {
+                          this.setState({ city })
+                        }}
                       />
                     </Block>
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         borderless
                         placeholder="Email"
+                        value={this.state.email}
                         iconContent={
                           <Icon
                             size={16}
@@ -104,12 +132,16 @@ class Influencerreg extends React.Component {
                           />
                         }
                         type="email"
+                        onChangeText={(email) => {
+                          this.setState({ email })
+                        }}
                       />
                     </Block>
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         borderless
                         placeholder="Phone Number"
+                        value={this.state.phone}
                         iconContent={
                           <Icon
                             size={16}
@@ -120,6 +152,9 @@ class Influencerreg extends React.Component {
                           />
                         }
                         type="number-pad"
+                        onChangeText={(phone) => {
+                          this.setState({ phone })
+                        }}
                       />
                     </Block>
 
@@ -128,6 +163,7 @@ class Influencerreg extends React.Component {
                         password
                         borderless
                         placeholder="Password"
+                        value={this.state.password}
                         iconContent={
                           <Icon
                             size={16}
@@ -137,6 +173,9 @@ class Influencerreg extends React.Component {
                             style={styles.inputIcons}
                           />
                         }
+                        onChangeText={(password) => {
+                          this.setState({ password })
+                        }}
                       />
                     </Block>
                     <Block row width={width * 0.75}>
@@ -160,14 +199,15 @@ class Influencerreg extends React.Component {
                     </Block>
                     <Block middle>
                       <Button color="primary" style={styles.createButton} 
-                        onPress={ () => navigation.navigate("SocialMedia")}
+                        onPress={ () => {
+                          navigation.navigate("SocialMedia", {influencer: this.state})
+                        }}
                       >
                         <Text bold size={14} color={Theme.COLORS.WHITE}>
                           CONTINUE
                         </Text>
                       </Button>
                     </Block>
-                  </KeyboardAvoidingView>
                 </Block>
               </Block>
             </ImageBackground>

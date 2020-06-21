@@ -61,19 +61,6 @@ function RegisterStack(props){
             <Stack.Screen
                 name="InfluencerRegistration"
                 component={InfluencerStack}
-                options={{
-                    header: ({ navigation, scene }) => (
-                        <Header
-                            title="Influencer Registration"
-                            back
-                            white
-                            transparent
-                            navigation={navigation}
-                            scene={scene}
-                        />
-                    ),
-                    headerTransparent: true
-                }}
             />
         </Stack.Navigator>
     )
@@ -84,125 +71,32 @@ function InfluencerStack(){
             <Stack.Screen
                 name="InfluencerStack"
                 component={Influencerreg}
-                options={{
-                    header: ({ navigation, scene }) => (
-                        <Header title="Influencer Stack" navigation={navigation} scene={scene} />
-                    ),
-                    cardStyle: { backgroundColor: "#F8F9FE" }
-                }}
             />
-            <Stack.Screen
-                name="SocialMedia"
-                component={SocialMediaStack}
-                options={{
-                    header: ({ navigation, scene }) => (
-                        <Header
-                            title="Social Media"
-                            back
-                            white
-                            transparent
-                            navigation={navigation}
-                            scene={scene}
-                        />
-                    ),
-                    headerTransparent: true
-                }}
-            />
-        </Stack.Navigator>
-    )
-}
-function SocialMediaStack(){
-    return (
-        <Stack.Navigator mode="card" headerMode="none">
             <Stack.Screen
                 name="SocialMedia"
                 component={SocialMediaPicker}
-                options={{
-                    header: ({ navigation, scene }) => (
-                        <Header title="Social Media" navigation={navigation} scene={scene} />
-                    ),
-                    cardStyle: { backgroundColor: "#F8F9FE" }
-                }}
             />
-            <Stack.Screen
-                name="Interests"
-                component={InterestsStack}
-                options={{
-                    header: ({ navigation, scene }) => (
-                        <Header title="Social Media" navigation={navigation} scene={scene} />
-                    ),
-                    cardStyle: { backgroundColor: "#F8F9FE" }
-                }}
-            />
-        </Stack.Navigator>
-    )
-}
-
-function InterestsStack() {
-    return (
-        <Stack.Navigator mode="card" headerMode="none">
             <Stack.Screen
                 name="Interests"
                 component={Interests}
-                options={{
-                    header: ({ navigation, scene }) => (
-                        <Header title="Interests" navigation={navigation} scene={scene} />
-                    ),
-                    cardStyle: { backgroundColor: "#F8F9FE" }
-                }}
             />
-            <Stack.Screen
-                name="Customization"
-                component={CustomizationStack}
-                options={{
-                    header: ({ navigation, scene }) => (
-                        <Header title="Customization" navigation={navigation} scene={scene} />
-                    ),
-                    cardStyle: { backgroundColor: "#F8F9FE" }
-                }}
-            />
-        </Stack.Navigator>
-    )
-}
-function CustomizationStack() {
-    return (
-        <Stack.Navigator mode="card" headerMode="none">
             <Stack.Screen
                 name="Customization"
                 component={Customization}
-                options={{
-                    header: ({ navigation, scene }) => (
-                        <Header title="Customization" navigation={navigation} scene={scene} />
-                    ),
-                    cardStyle: { backgroundColor: "#F8F9FE" }
-                }}
             />
             <Stack.Screen
                 name="Profile"
                 component={ProfileStack}
-                options={{
-                    header: ({ navigation, scene }) => (
-                        <Header title="Profile" navigation={navigation} scene={scene} />
-                    ),
-                    cardStyle: { backgroundColor: "#F8F9FE" }
-                }}
             />
         </Stack.Navigator>
     )
 }
-
 function ProfileStack() {
     return (
-        <Stack.Navigator mode="card" headerMode="none">
+        <Stack.Navigator headerMode="none">
             <Stack.Screen
                 name="Profile"
                 component={Profile}
-                options={{
-                    header: ({ navigation, scene }) => (
-                        <Header title="Profile" navigation={navigation} scene={scene} />
-                    ),
-                    cardStyle: { backgroundColor: "#F8F9FE" }
-                }}
             />
         </Stack.Navigator>
     )

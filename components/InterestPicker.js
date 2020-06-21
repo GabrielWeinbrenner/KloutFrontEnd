@@ -1,20 +1,22 @@
 import React from 'react';
-import { StyleSheet, Dimensions, View, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, Dimensions, View, FlatList, TouchableHighlight  } from 'react-native';
 import { Block, Button, Text } from 'galio-framework';
 import Theme from '../constants/Theme'
 class InterestPicker extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            interests: [
+                { name: "Clothing", backgroundColor: '#5E72E4' },
+                { name: "Hardware", backgroundColor: '#5E72E4' },
+                { name: "Toys", backgroundColor: '#5E72E4' },
+                { name: "Books", backgroundColor: '#5E72E4' }
+            ]
+        }
     }
     render() {
         const navigation = this.props.navigation
-
-        const interests = [
-            { name: "Clothing"},
-            { name: "Hardware"},
-            { name: "Toys"}, 
-            { name: "Books"}
-        ];
+    
 
         return (
             <Block flex center middle>
@@ -24,16 +26,26 @@ class InterestPicker extends React.Component {
                         {this.props.text}
                     </Text>
                     <FlatList
-                        data={interests}
+                        data={this.state.interests}
                         numColumns={2}
                         renderItem={({ item, index }) => (
-                            <TouchableOpacity
-                                onPress={() => console.log(item, this.props.text)}
+                            <Button 
+                                onPress={() => {
+                                    var i = this.state.interests;
+                                    var color = i[index].backgroundColor;
+                                    if (color == '#5E72E4' )
+                                        i[index].backgroundColor = "#3b53de";
+                                    else
+                                        i[index].backgroundColor = '#5E72E4';
+                                    this.setState({interests: i})
+                                }}
                                 style={[
                                     styles.interestContainer
-                                ]}>
+                                ]}
+                                color={this.state.interests[index].backgroundColor}
+                                >   
                                 <Text style={styles.interestText}>{item.name}</Text>
-                            </TouchableOpacity>
+                            </Button >
                         )}
                         keyExtractor={(item, index) => {
                             index.toString();
@@ -44,7 +56,14 @@ class InterestPicker extends React.Component {
                 <Block middle>
                     <Button color="primary" style={styles.createButton}
                         onPress={()=>{
-                            navigation.navigate(this.props.destination)
+                            const influencer = this.props.input.influencer;
+                            const vals = this.state.interests.filter((item) => {
+                                if (item.backgroundColor == "#3b53de"){
+                                    return item.name;
+                                }
+                            })
+                            influencer.interests = vals;
+                            navigation.navigate(this.props.destination, {influencer})
                         }}
                     >
                         <Text bold size={14} color={Theme.COLORS.WHITE} >
@@ -60,7 +79,7 @@ class InterestPicker extends React.Component {
 const styles = StyleSheet.create({
     interestText: {
         fontSize: 20,
-        color: "#242C40",
+        color: '#FFFFFF',
     },
     createButton: {
         width: 300,

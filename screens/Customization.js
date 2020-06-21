@@ -12,10 +12,19 @@ import Theme from '../constants/Theme';
 const { width, height } = Dimensions.get("screen");
 
 class Customization extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            cashApp: "",
+            desc: "",
+        }
+    }
     render() {
         const { navigation } = this.props;
+        const influencer = this.props.route.params;
 
         return (
+
             <Block flex middle>
                 <Block>
                     <Text h4 bold style={styles.heading}>
@@ -28,6 +37,7 @@ class Customization extends React.Component {
                     </Text>
                     <Input
                         borderless
+                        value = {this.state.cashApp}
                         placeholder="CashApp Username"
                         iconContent={
                             <Icon
@@ -38,6 +48,9 @@ class Customization extends React.Component {
                                 style={styles.inputIcons}
                             />
                         }
+                        onChangeText={(cashApp) => {
+                            this.setState({ cashApp })
+                        }}
                     />
                 </Block>
                 <Block width={width * 0.8}>
@@ -47,6 +60,8 @@ class Customization extends React.Component {
                     <Input
                         borderless
                         placeholder="Description"
+                        value={this.state.desc}
+
                         iconContent={
                             <Icon
                                 size={16}
@@ -57,12 +72,20 @@ class Customization extends React.Component {
                             />
                         }
                         style={{padding: 0, height: 100, width: width*0.8}}
+                        onChangeText={(desc) => {
+                            this.setState({ desc })
+                        }}
                     />
                 </Block>
                 <Block>
                     <Button
                         style={styles.continueButton} round size="small" color="primary"
-                        onPress={() => { navigation.navigate("Profile") }}
+                        onPress={() => { 
+                            influencer.cashApp = this.state.cashApp;
+                            influencer.description = this.state.desc;
+                            console.log(influencer);
+                            navigation.navigate("Profile") 
+                        }}
                     >
                         Create Account
                     </Button>

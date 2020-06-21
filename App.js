@@ -13,6 +13,7 @@ import Screens from "./navigation/Screens";
 
 
 export default props => {
+
   const [isLoadingComplete, setLoading] = useState(false);
 
 
@@ -40,13 +41,14 @@ export default props => {
     );
   } else {
     return (
-      <NavigationContainer>
-        <GalioProvider theme={Theme}>
-          <Block flex>
-            <Screens />
-          </Block>
-        </GalioProvider>
-      </NavigationContainer>
+        <NavigationContainer>
+          <GalioProvider theme={Theme}>
+              <Block flex>
+                <Screens />
+              </Block>
+          </GalioProvider>
+        </NavigationContainer>
+
     );
   }
 }
